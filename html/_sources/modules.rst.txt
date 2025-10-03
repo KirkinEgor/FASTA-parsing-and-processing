@@ -1,7 +1,0 @@
-FASTA
-=====
-
-.. automodule:: FASTA
-   :members:
-   :undoc-members:
-   :show-inheritance:
