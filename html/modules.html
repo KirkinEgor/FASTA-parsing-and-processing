@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>FASTA &#8212; FASTA parsing and processing 2025 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=61cd365c" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=cb975c41"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to FASTA parsing and processing’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-FASTA">
+<span id="fasta"></span><h1>FASTA<a class="headerlink" href="#module-FASTA" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="FASTA.FastaReader">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">FASTA.</span></span><span class="sig-name descname"><span class="pre">FastaReader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inp_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/FASTA.html#FastaReader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#FASTA.FastaReader" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A FASTA file reader that parses biological sequences from FASTA format files.</p>
+<p>It yields Seq objects containing sequence tags and sequences.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="FASTA.FastaReader.inp_path">
+<span class="sig-name descname"><span class="pre">inp_path</span></span><a class="headerlink" href="#FASTA.FastaReader.inp_path" title="Link to this definition">¶</a></dt>
+<dd><p>Path to the input FASTA file. Can be None for interactive input.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="FASTA.FastaReader.read_seq">
+<span class="sig-name descname"><span class="pre">read_seq</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/FASTA.html#FastaReader.read_seq"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#FASTA.FastaReader.read_seq" title="Link to this definition">¶</a></dt>
+<dd><p>Read and parse sequences from the FASTA file.</p>
+<p>This method is a generator that yields Seq objects one at a time.
+If no file path was provided during initialization, it will prompt
+the user to enter a file path interactively.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Yields<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Seq</em> – Sequence objects containing tag and sequence data</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>FileNotFoundError</strong> – If the specified FASTA file cannot be found</p></li>
+<li><p><strong>ValueError</strong> – Empty sequence is found
+    Empty tag is found</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="FASTA.Seq">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">FASTA.</span></span><span class="sig-name descname"><span class="pre">Seq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sequence</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/FASTA.html#Seq"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#FASTA.Seq" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a biological sequence (DNA, RNA, or protein) with metadata.</p>
+<p>This class stores sequence data along with its identifier tag and provides
+basic bioinformatics properties such as sequence length and alphabet type
+detection.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="FASTA.Seq.tag">
+<span class="sig-name descname"><span class="pre">tag</span></span><a class="headerlink" href="#FASTA.Seq.tag" title="Link to this definition">¶</a></dt>
+<dd><p>Sequence identifier or description (text after ‘&gt;’ in FASTA)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="FASTA.Seq.sequence">
+<span class="sig-name descname"><span class="pre">sequence</span></span><a class="headerlink" href="#FASTA.Seq.sequence" title="Link to this definition">¶</a></dt>
+<dd><p>The biological sequence string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="FASTA.Seq.alphabet">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">alphabet</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#FASTA.Seq.alphabet" title="Link to this definition">¶</a></dt>
+<dd><p>Detect the type of biological sequence based on its characters.</p>
+<p>Determines if the sequence is nucleotide (only A, C, T, G) or protein
+(contains other amino acid characters).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>‘Nucleotide’ if sequence contains only A, C, T, G characters,
+‘Protein’ otherwise</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="FASTA.Seq.seq_len">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">seq_len</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#FASTA.Seq.seq_len" title="Link to this definition">¶</a></dt>
+<dd><p>Get the length of the biological sequence.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Integer length of the sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">FASTA parsing and processing</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">FASTA</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#FASTA.FastaReader"><code class="docutils literal notranslate"><span class="pre">FastaReader</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#FASTA.Seq"><code class="docutils literal notranslate"><span class="pre">Seq</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to FASTA parsing and processing’s documentation!</a></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Kirkin Egor.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.3.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/modules.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
