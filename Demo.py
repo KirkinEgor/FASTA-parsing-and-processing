@@ -9,6 +9,6 @@ file_path = os.path.join(script_dir, "Sample.fasta")
 read = FastaReader(file_path)
 for seq in islice(read.read_seq(), 10):
     print(str(seq))
-    print(seq.seq_len)
-    print(seq.alphabet)
+    print(f"Sequence length: {seq.seq_len}")
+    print(f"Sequence alphabet: {seq.alphabet}")
     print("\n")
