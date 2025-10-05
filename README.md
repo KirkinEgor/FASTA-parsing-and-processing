@@ -182,6 +182,25 @@ ATCGATCGATCG
 MKTVLPRRVLK
 ```
 
+## Demo program
+
+The repository includes a comprehensive demonstration program:
+```
+bash
+
+# Run the demo program with sample data
+python Demo.py
+```
+**Sample dataset included**: The demo uses example Sample.fasta file containing nucleotide sequences
+
+## Complete HTML documentation
+Browse the full documentation by opening:
+```
+text
+
+html documentation/FASTA.html
+```
+
 ## Contributing
 
 Feel free to submit issues and enhancement requests!
