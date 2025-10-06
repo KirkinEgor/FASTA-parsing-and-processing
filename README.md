@@ -26,7 +26,7 @@ cd FASTA
 from FASTA import FastaReader, Seq
 
 # Read sequences from a FASTA file
-reader = FastaReader("sequences.fasta")
+reader = FastaReader("sequences.fasta") # insert your fasta-file path
 for sequence in reader.read_seq():
     print(f"Tag: {sequence.tag}")
     print(f"Sequence: {sequence.sequence}")
