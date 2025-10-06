@@ -198,7 +198,7 @@ Browse the full documentation by opening:
 ```
 text
 
-html documentation/FASTA.html
+html documentation/index.html
 ```
 
 ## Contributing
