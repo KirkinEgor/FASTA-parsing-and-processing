@@ -14,7 +14,7 @@ A Python module for parsing and working with FASTA format biological sequences (
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/KirkinEgor/FASTA-parsing-and-processing.git
 cd FASTA
 
 # Or simply copy the FASTA.py file to your project directory
